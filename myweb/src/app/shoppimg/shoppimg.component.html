@@ -1,0 +1,22 @@
+
+
+<div class="card-columns" >
+    <div class="card border-primary" *ngFor="let row of itemsData">
+      <picture>
+        <source srcset={{row.image}} type="image/svg+xml">
+        <img src={{row.image}} class="img-fluid img-thumbnail" alt="...">
+      </picture>
+      <!-- <img class="card-img-top rounded img-thumbnail" src={{row.image}} alt="Card image cap" > -->
+      <div class="card-body">
+        <h5 class="card-title">{{row.title}}</h5>
+        <p class="text-900 font-medium text-xl ">{{row.price}}$</p>
+        <p-rating [ngModel]="row.rating.rate" [readonly]="true" [cancel]="false" class="float-right"></p-rating>
+        <p-button icon="pi pi-shopping-cart" label="Add to Cart"  ></p-button>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">{{row.category}}</small>
+        <button pButton pRipple type="button" label="Buy" icon="pi pi-shopping-bag" class="p-button-outlined float-right align-top"></button>
+      </div>
+    </div>
+    
+  </div>

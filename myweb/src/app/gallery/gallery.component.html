@@ -1,0 +1,33 @@
+<!-- 
+<div  class="row ">
+  <div class="col-lg-4 mb-5 mb-lg-0 shadow" *ngFor="let row of newsData">
+    <div class="" >
+<img
+        src={{row.download_url}}
+        data-mdb-img="https://mdbcdn.b-cdn.net/img/Photos/Slides/1.webp"
+        alt="Table Full of Spices"
+        class="rounded img-fluid "
+        
+      />
+    </div>
+  </div>
+</div> -->
+
+<p-galleria [value]="images">
+    <ng-template pTemplate="item" let-item>
+        <img [src]="item.download_url" [alt]="item.alt" />
+    </ng-template>
+</p-galleria>
+
+
+<!-- <p-galleria [(value)]="images" [responsiveOptions]="responsiveOptions" [containerStyle]="{'max-width': '660px', 'margin-top':'2em'}" [numVisible]="5"
+    thumbnailsPosition="bottom">
+    <ng-template pTemplate="item" let-item>
+        <img [src]="item.previewImageSrc" style="width: 100%; display: block;" />
+    </ng-template>
+    <ng-template pTemplate="thumbnail" let-item>
+        <div class="grid grid-nogutter justify-content-center">
+            <img [src]="item.thumbnailImageSrc" />
+        </div>
+    </ng-template>
+</p-galleria> -->

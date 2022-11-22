@@ -1,0 +1,17 @@
+
+<div class="media  d-flex  shadow-lg  mb-5 bg-light rounded" style="box-shadow: 5px 5px 50px rgb(92, 89, 89); margin: auto;width: 90%;" *ngFor="let row of newsData">
+ 
+    <img class="align-self-center mr-3 rounded"  src={{row.urlToImage}} alt="Generic placeholder image" height="320px" width="350px">
+    <div class="media-body p-3 ">
+        <h5 class="mt-0 alert-heading">{{row.title}}</h5>
+      <p class="text-center">{{row.description}} <a href={{row.url}}>Read more...</a>
+     </p>
+     <marquee behavior="" direction="">{{row.content}}</marquee>
+      <p  class="text-muted text-right">--{{row.author}}</p>
+      <p class="text-muted text-right">{{row.publishedAt.substring(11,16)}},<br>{{row.publishedAt.substring(0,10)}}</p>
+    </div>
+  </div>
+ 
+
+  
+  
