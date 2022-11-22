@@ -1,0 +1,93 @@
+
+
+
+
+
+<p-tabView [style]="{'margin':'auto','width':'80%','padding':'30px','border-radius':'10px','box-shadow':'5px 5px 50px black'}">
+    <p-tabPanel header="KIA" >
+        <div class="grid grid-nogutter surface-section text-800">
+            <div class="col-12 md:col-6 p-6 text-center md:text-left flex align-items-center ">
+                <section>
+                    <span class="block text-6xl font-bold mb-1">Our wheels make you Fly</span>
+                    <div class="text-4xl text-primary font-bold mb-3">" Cars you drive says a lot about you "</div>
+                    <p class="mt-0 mb-4 text-700 line-height-3">Kia Motors Story
+                       
+                        We offer products and services that befit our vision of turning cars from mere modes of transport into new lifestyle spaces.</p>
+                    
+                    <button pButton pRipple label="Order Now" type="button" class="mr-3 p-button-raised"></button>
+                    <button pButton pRipple label="Know More" type="button" class="p-button-outlined"></button>
+                </section>
+            </div>
+            <div class="col-12 md:col-6 overflow-hidden">
+                <img src="assets/Images/car1.png" alt="Image" class="md:ml-auto block md:h-full" style="clip-path: polygon(8% 0, 100% 0%, 100% 100%, 0 100%)">
+            </div>
+        </div>
+    </p-tabPanel>
+
+
+
+    <p-tabPanel header="Admin Login" leftIcon="pi pi-fw pi-user">
+        <div class="surface-card p-4 shadow-2 border-round w-full lg:w-6" style="margin: auto; width: 30%;">
+            <div class="text-center mb-5">
+                <img src="assets/Images/login.png" alt="Image" height="120" class="mb-3">
+                <div class="text-900 text-3xl font-medium mb-3">Admin Login</div>
+                <span class="text-600 font-medium line-height-3">Only for Authorised</span>
+                <a class="font-medium no-underline ml-2 text-blue-500 cursor-pointer">Users</a>
+            </div>
+        
+            <div style="margin: auto; width: 50%;">
+                <label for="Employee ID" class="block text-900 font-medium mb-2">Employee ID</label>
+                <input id="Employee ID" type="text" pInputText class="w-full mb-3">
+        
+                <label for="password1" class="block text-900 font-medium mb-2">Password</label>
+                <input id="password1" type="password" pInputText class="w-full mb-3">
+        
+                <div class="flex align-items-center justify-content-between mb-6">
+                    <div class="flex align-items-center">
+                        <p-checkbox id="rememberme1" [binary]="true" styleClass="mr-2"></p-checkbox>
+                        <label for="rememberme1">Remember me</label>
+                    </div>
+                    <a class="font-medium no-underline ml-2 text-blue-500 text-right cursor-pointer">Forgot password?</a>
+                </div>
+        
+                <button pButton pRipple label="Sign In" icon="pi pi-user" class="w-full" onclick="window.location.href='admin'"></button>
+            </div>
+        </div>
+    </p-tabPanel>
+
+
+
+    
+    <p-tabPanel header="BS-Incharge Login" leftIcon="pi pi-fw pi-user">
+        <div class="surface-card p-4 shadow-2 border-round w-full lg:w-6" style="margin: auto; width: 30%;">
+            <div class="text-center mb-5">
+                <img src="assets/Images/login.png" alt="Image" height="120" class="mb-3">
+                <div class="text-900 text-3xl font-medium mb-3">BS-Incharge Login</div>
+                <span class="text-600 font-medium line-height-3">Only for Authorised</span>
+                <a class="font-medium no-underline ml-2 text-blue-500 cursor-pointer">Users</a>
+            </div>
+        
+            <div style="margin: auto; width: 50%;">
+                <label for="Employee ID" class="block text-900 font-medium mb-2">Employee ID</label>
+                <input id="Employee ID" type="text" pInputText class="w-full mb-3">
+        
+                <label for="password1" class="block text-900 font-medium mb-2">Password</label>
+                <input id="password1" type="password" pInputText class="w-full mb-3">
+        
+                <div class="flex align-items-center justify-content-between mb-6">
+                    <div class="flex align-items-center">
+                        <p-checkbox id="rememberme1" [binary]="true" styleClass="mr-2"></p-checkbox>
+                        <label for="rememberme1">Remember me</label>
+                    </div>
+                    <a class="font-medium no-underline ml-2 text-blue-500 text-right cursor-pointer">Forgot password?</a>
+                </div>
+                
+                
+
+                <button pButton pRipple label="Sign In" icon="pi pi-user" class="w-full" onclick="window.location.href='bsinch'">
+                 </button>
+            </div>
+        </div>
+    </p-tabPanel>
+</p-tabView>
+
