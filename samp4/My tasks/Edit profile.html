@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit profile</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="Home.css">
+</head>
+<body style="background-color: rgb(220, 225, 230); color: black; ">
+    <header>
+        
+        <div><img src="Images/ABC LOGO.png" alt="" height="50" width="100" style="border-radius: 50%;"> <span>ABCindia.com</span>     
+            <div class="navbar">
+                
+                <a href="Home.html">Home</a>
+                <a href="AboutUs.html">About us</a>
+                <a href="ContactUs.html">Contact us</a>
+            
+            </div>
+        </div>
+        
+    </header>
+   
+<form action="" name="Edit">
+    <div style="margin: 5% 55% 5% 10% ">
+        <h1 style="text-align: center;">Edit profile</h1><br>
+
+
+<!-- 
+       <label for=""> Full name</label><span style="color: red; font-size: larger;">*</span>       
+        <input type="text" placeholder="Fullname" name="fName" onChange="validation()"><br><br> -->
+
+        <div class="form-group">
+            <label for="formGroupExampleInput">Fullname<span style="color: red; font-size: larger;">*</span></label>
+            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Name" required maxlength="15" minlength="5" onChange="namev()" required>
+          </div>
+
+
+        
+
+
+          <script>
+            function namev(){
+              let x=document.getElementById("formGroupExampleInput").value;
+            if(x.length>4 && x.length<16){
+              document.getElementById("formGroupExampleInput").style.border="3px solid green"
+            }
+            else{
+              document.getElementById("formGroupExampleInput").style.border="3px solid red"
+            }
+            }
+           
+
+          </script>
+
+
+
+         <!-- Email address<span style="color: red; font-size: larger;">*</span>
+        <input type="email" placeholder="Email" name="Email" onChange="validation()"><br><br>  -->
+        <div class="form-group">
+            <label for="exampleInputEmail1">Email address<span style="color: red; font-size: larger;">*</span></label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" onChange="emailv()" required>
+            <p id="emailHelp" class="form-text "></p>
+          </div>
+
+          <script>
+            function emailv(){
+            let e=document.getElementById("exampleInputEmail1").value;
+            let pattern = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/; 
+            let check=pattern.test(e);
+            console.log(typeof check,check);
+            if(check==false){
+              document.getElementById("exampleInputEmail1").style.border="3px solid red"
+              document.getElementById("emailHelp").style.color="red"
+              document.getElementById("emailHelp").innerHTML="Enter email address properly"
+            }
+            else{
+              document.getElementById("exampleInputEmail1").style.border="3px solid green"
+              document.getElementById("emailHelp").style.color="green"
+              document.getElementById("emailHelp").innerHTML="Email valid"
+            }
+             }
+          </script>
+
+
+
+
+          <div class="form-group">
+            Mobile number<span style="color: red; font-size: larger;">*</span>
+            <!-- <input type="number"  placeholder="Mobile number" maxlength="10" name="mobile"><br><br> -->
+            <input type="tel" pattern=".{10}" class="form-control" id="validationCustom08" placeholder="Mobile" oninput="check(this)" onChange="numv()" required>
+    
+          </div>
+
+<script>
+  function numv() {
+    let n=document.getElementById("validationCustom08").value;
+    if(n.length==10){
+      document.getElementById("validationCustom08").style.border="3px solid green"
+    }
+    else{
+      document.getElementById("validationCustom08").style.border="3px solid red"
+    }
+    
+  }
+</script>
+
+
+
+
+          <div class="form-group">Adhaar Number<span style="color: red; font-size: larger;">*</span>
+            <input type="tel" pattern=".{12}" class="form-control" id="validationCustom8" placeholder="Adhaar number" oninput="check(this)" onChange="aadv()" required>
+            <small id="adhar"></small>
+          </div>
+
+
+<script>
+  function aadv(){
+    let a=document.getElementById("validationCustom8").value
+    if(a.length==12){
+      document.getElementById("validationCustom8").style.border="3px solid green"
+      document.getElementById("adhar").innerHTML="Aadhar number valid"
+      document.getElementById("adhar").style.color="green"
+    }
+    else{
+      document.getElementById("validationCustom8").style.border="3px solid red"
+      document.getElementById("adhar").innerHTML="X  Invalid"
+      document.getElementById("adhar").style.color="red"
+    }
+  }
+
+</script>
+
+
+
+          <div class="form-group">
+            Pan Number<span style="color: red; font-size: larger;">*</span>  <br>     
+            <input type="text" id="pan_no" name="pan_no" placeholder="PAN No" onChange="panv()" maxlength="10" pattern="[a-zA-Z]{5}[0-9]{4}[a-zA-Z]{1}" title="Please enter valid PAN number. E.g. AAAAA9999A" class="form-control" required/>
+           
+          </div>
+
+          <script>
+            function panv(){
+              let p=document.getElementById("pan_no").value
+              let pat=/^([a-zA-Z]){5}([0-9]){4}([a-zA-Z]){1}?$/;
+              let mah=pat.test(p)
+              if(mah==true){
+                document.getElementById("pan_no").style.border="3px solid green"
+              }else{
+                document.getElementById("pan_no").style.border="3px solid red"
+              }
+            }
+
+          </script>
+
+
+
+
+          <div class="form-group"> Extra number <br>
+            <input type="number" class="form-control"  placeholder="Mobile number" maxlength="10"><br>
+    </div>
+          
+    <div class="form-group">        Gender <br> Male<input name="m" type="radio">Female<input name="m" type="radio"><br><br>
+    
+    
+    </div> 
+        <!-- Select your country
+        <select name="Country" id="Country">
+            <option >select</option>
+            <option >India</option>
+            <option >USA</option>
+            <option >UK</option>
+            <option >Pakisthan</option>
+        </select><br><br> -->
+        <div class="form-group"> 
+             <form name="form1" id="form1" action="/action_page.php" >
+            Select your location <br> <select name="subject" id="subject" style="padding: 10px; border-radius: 5px;font-size: large; font-weight: 500; border: 0; ">
+                <option value="" selected="selected" >Select country</option>
+              </select>
+              
+            <select name="topic" id="topic"  style="padding: 10px; border-radius: 5px;font-size: large; font-weight: 500; border: 0; ">
+                <option value="" selected="selected">Select State</option>
+              </select><br><br>
+              
+            <select name="chapter" id="chapter"  style="padding: 10px; border-radius: 5px;font-size: large; font-weight: 500; border: 0; ">
+                <option value="" selected="selected">Select distict</option>
+              </select>
+              <br><br>
+              
+            </form></div>
+
+
+
+
+            <script>
+                        var subjectObject = {
+  "India": {
+    "Andhrapradesh": [  
+            "Anantapur",
+            "Chittoor",
+            "East Godavari",
+            "Guntur",
+            "Krishna",
+            "Kurnool",
+            "Nellore",
+            "Prakasam",
+            "Srikakulam",
+            "Visakhapatnam",
+            "Vizianagaram",
+            "West Godavari",
+            "YSR Kadapa"
+         ],
+    "Tamil nadu": [  
+            "Ariyalur",
+            "Chennai",
+            "Coimbatore",
+            "Cuddalore",
+            "Dharmapuri",
+            "Dindigul",
+            "Erode",
+            "Kanchipuram",
+            "Kanyakumari",
+            "Karur",
+            "Krishnagiri",
+            "Madurai",
+            "Nagapattinam",
+            "Namakkal",
+            "Nilgiris",
+            "Perambalur",
+            "Pudukkottai",
+            "Ramanathapuram",
+            "Salem",
+            "Sivaganga",
+            "Thanjavur",
+            "Theni",
+            "Thoothukudi ",
+            "Tiruchirappalli",
+            "Tirunelveli",
+            "Tiruppur",
+            "Tiruvallur",
+            "Tiruvannamalai",
+            "Tiruvarur",
+            "Vellore",
+            "Viluppuram",
+            "Virudhunagar"
+         ],
+    "Karnataka": [  
+            "Bagalkot",
+            "Ballari ",
+            "Belagavi ",
+            "Bengaluru ",
+            "Bengaluru ",
+            "Bidar",
+            "Chamarajanagar",
+            "Chikballapur",
+            "Chikkamagaluru (Chikmagalur)",
+            "Chitradurga",
+            "Dakshina Kannada",
+            "Davangere",
+            "Dharwad",
+            "Gadag",
+            "Hassan",
+            "Haveri",
+            "Kalaburagi (Gulbarga)",
+            "Kodagu",
+            "Kolar",
+            "Koppal",
+            "Mandya",
+            "Mysuru (Mysore)",
+            "Raichur",
+            "Ramanagara",
+            "Shivamogga (Shimoga)",
+            "Tumakuru (Tumkur)",
+            "Udupi",
+            "Uttara Kannada (Karwar)",
+            "Vijayapura (Bijapur)",
+            "Yadgir"
+         ],
+    "Kerala": [  
+            "Alappuzha",
+            "Ernakulam",
+            "Idukki",
+            "Kannur",
+            "Kasaragod",
+            "Kollam",
+            "Kottayam",
+            "Kozhikode",
+            "Malappuram",
+            "Palakkad",
+            "Pathanamthitta",
+            "Thiruvananthapuram",
+            "Thrissur",
+            "Wayanad"
+         ],
+    "Telangana": [  
+            "Adilabad",
+            "Bhadradri Kothagudem",
+            "Hyderabad",
+            "Jagtial",
+            "Jangaon",
+            "Jayashankar Bhoopalpally",
+            "Jogulamba Gadwal",
+            "Kamareddy",
+            "Karimnagar",
+            "Khammam",
+            "Komaram Bheem Asifabad",
+            "Mahabubabad",
+            "Mahabubnagar",
+            "Mancherial",
+            "Medak",
+            "Medchal",
+            "Nagarkurnool",
+            "Nalgonda",
+            "Nirmal",
+            "Nizamabad",
+            "Peddapalli",
+            "Rajanna Sircilla",
+            "Rangareddy",
+            "Sangareddy",
+            "Siddipet",
+            "Suryapet",
+            "Vikarabad",
+            "Wanaparthy",
+            "Warangal (Rural)",
+            "Warangal (Urban)",
+            "Yadadri Bhuvanagiri"
+         ],
+    "Orissa": [  
+            "Angul",
+            "Balangir",
+            "Balasore",
+            "Bargarh",
+            "Bhadrak",
+            "Boudh",
+            "Cuttack",
+            "Deogarh",
+            "Dhenkanal",
+            "Gajapati",
+            "Ganjam",
+            "Jagatsinghapur",
+            "Jajpur",
+            "Jharsuguda",
+            "Kalahandi",
+            "Kandhamal",
+            "Kendrapara",
+            "Kendujhar (Keonjhar)",
+            "Khordha",
+            "Koraput",
+            "Malkangiri",
+            "Mayurbhanj",
+            "Nabarangpur",
+            "Nayagarh",
+            "Nuapada",
+            "Puri",
+            "Rayagada",
+            "Sambalpur",
+            "Sonepur",
+            "Sundargarh"
+         ],
+    "Maharatra": [  
+            "Ahmednagar",
+            "Akola",
+            "Amravati",
+            "Aurangabad",
+            "Beed",
+            "Bhandara",
+            "Buldhana",
+            "Chandrapur",
+            "Dhule",
+            "Gadchiroli",
+            "Gondia",
+            "Hingoli",
+            "Jalgaon",
+            "Jalna",
+            "Kolhapur",
+            "Latur",
+            "Mumbai City",
+            "Mumbai Suburban",
+            "Nagpur",
+            "Nanded",
+            "Nandurbar",
+            "Nashik",
+            "Osmanabad",
+            "Palghar",
+            "Parbhani",
+            "Pune",
+            "Raigad",
+            "Ratnagiri",
+            "Sangli",
+            "Satara",
+            "Sindhudurg",
+            "Solapur",
+            "Thane",
+            "Wardha",
+            "Washim",
+            "Yavatmal"
+         ],
+    "Madhya pradesh": [  
+            "Agar Malwa",
+            "Alirajpur",
+            "Anuppur",
+            "Ashoknagar",
+            "Balaghat",
+            "Barwani",
+            "Betul",
+            "Bhind",
+            "Bhopal",
+            "Burhanpur",
+            "Chhatarpur",
+            "Chhindwara",
+            "Damoh",
+            "Datia",
+            "Dewas",
+            "Dhar",
+            "Dindori",
+            "Guna",
+            "Gwalior",
+            "Harda",
+            "Hoshangabad",
+            "Indore",
+            "Jabalpur",
+            "Jhabua",
+            "Katni",
+            "Khandwa",
+            "Khargone",
+            "Mandla",
+            "Mandsaur",
+            "Morena",
+            "Narsinghpur",
+            "Neemuch",
+            "Panna",
+            "Raisen",
+            "Rajgarh",
+            "Ratlam",
+            "Rewa",
+            "Sagar",
+            "Satna",
+            "Sehore",
+            "Seoni",
+            "Shahdol",
+            "Shajapur",
+            "Sheopur",
+            "Shivpuri",
+            "Sidhi",
+            "Singrauli",
+            "Tikamgarh",
+            "Ujjain",
+            "Umaria",
+            "Vidisha"],
+    
+  },
+  "USA": {
+    "USA-1": ["USA-1-1", "USA-1-2", "USA-1-3"],
+    "USA-2": ["USA-2-1", "USA-2-2", "USA-2-3"]
+  },
+  "Germany": {
+    "Germany-1": ["Germany-1-1", "Germany-1-2", "Germany-1-3"],  
+    "Germany-2": ["Germany-2-1", "Germany-2-2", "Germany-2-3"]
+  },
+  "Russia": {
+    "Russia-1": ["Russia-1-1", "Russia-1-2", "Russia-1-3"],
+    "Russia-2": ["Russia-2-1", "Russia-2-2", "Russia-2-3"]
+  },
+  "Canada": {
+    "Canada-1": ["Canada-1-1", "Canada-1-2", "Canada-1-3"],
+    "Canada-2": ["Canada-2-1", "Canada-2-2", "Canada-2-3"]
+  }
+  
+  
+ 
+}
+                window.onload = function() {
+                  var subjectSel = document.getElementById("subject");
+                  var topicSel = document.getElementById("topic");
+                  var chapterSel = document.getElementById("chapter");
+                  for (var x in subjectObject) {
+                    subjectSel.options[subjectSel.options.length] = new Option(x, x);
+                  }
+                  subjectSel.onchange = function() {
+                    //empty Chapters- and Topics- dropdowns
+                    chapterSel.length = 1;
+                     topicSel.length = 1;
+                    //display correct values
+                    for (var y in subjectObject[this.value]) {
+                      topicSel.options[topicSel.options.length] = new Option(y, y);
+                    }
+                  }
+                  topicSel.onchange = function() {
+                    //empty Chapters dropdown
+                    chapterSel.length = 1;
+                    //display correct values
+                    var z = subjectObject[subjectSel.value][this.value];
+                    for (var i = 0; i < z.length; i++) {
+                      chapterSel.options[chapterSel.options.length] = new Option(z[i], z[i]);
+                    }
+                  }
+                }
+                </script>
+
+
+
+
+
+ <div class="form-group">        Education<span style="color: red; font-size: larger;">*</span> :  UG<input type="checkbox" required> PG <input type="checkbox"><br><br>
+ </div>
+ <div class="form-group"> <form>
+    <div class="form-group">
+      <label for="exampleFormControlFile1">Change profile</label>
+      <input type="file" class="form-control-file" id="exampleFormControlFile1">
+    </div>
+  </form></div>
+
+
+ <div class="form-group">
+    Date of birth<span style="color: red; font-size: larger;">*</span> <br>
+    <input type="date" class="form-control" required>
+    <input type="reset" ><br>
+</div>
+
+
+ <div class="form-group">Communication address <br>
+    <textarea name="" id="" cols="15" rows="3" class="form-control"></textarea><br>
+
+
+    Present Address <br>
+    <textarea name="" id="" cols="15" rows="3" class="form-control"></textarea> <br>
+
+
+    projects<br>
+    <input type="text" class="form-control"><br><br>
+</div>
+
+        
+       
+       
+
+
+
+
+      
+    
+        <button type="submit" class="btn btn-primary">Make Changes</button><br><br>
+         <a href="EmployeeDtails.html" >Back</a>
+
+
+    </div>
+</form>
+
+
+
+
+<!-- <script>
+
+
+
+
+function validation(){
+let Name=document.forms["edit"]["fName"].value
+let email=document.forms["edit"]["Email"].value
+let mNumber=document.forms["edit"]["number"].value
+let adhaar=document.forms["edit"]["Adhaar"].value
+let pan=document.forms["edit"]["pan"].value
+if (name==""){
+    console.log("ok");
+}
+else if(name!=""){
+    console.log("not ok");
+}
+
+
+}
+
+
+
+
+</script> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <footer>
+        <div >
+            <section><h5>Company info</h5>
+            <ul>
+                <li><a href="">CEO</a></li>
+                <li><a href="">Founder</a></li>
+                <li><a href="">Important people</a></li>
+            </ul>
+            </section>
+            <section><h5>Products</h5>
+            <ul>
+                <li>Mobiles</li>
+                <li>Tabs</li>
+                <li>Watchs</li>
+                <li>Bluetooth devices</li>
+            </ul>
+            </section>
+            <section><h5>Location</h5>
+            <ul>
+                <li><a href="">Us locations</a></li>
+                <li><a href="">India locations</a></li>
+                
+            </ul>
+            </section>
+            <section><p>Follow us on: <br>
+                <ul>
+                    <li><i class="material-icons">facebook</i></li>
+                    <li><i class="material-icons">language</i></li>
+                    <li><i class="material-icons">linkedin</i></p></li>
+                </ul>
+               
+            
+            </section>
+            <section><p>Register for more updates <br> <input type="text" placeholder="Email Address"></p>
+                 <div style="float: right;">Customer support : <br> phone:1800 200 200 <br>Email:CustomerSupport@ABC.com</div></section>
+        </div><br>
+        
+        <p>Copyright ⓒ 1995-2022 ABCindia pvt ltd All Rights reserved.</p>
+    </footer>
+
+    
+</body>
+</html>
