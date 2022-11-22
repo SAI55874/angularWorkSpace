@@ -1,0 +1,40 @@
+
+.file {
+    outline-color:rgba(123, 121, 121, 0.959);
+    outline-style: dashed;
+    padding-top: 50px;
+    padding-left:10px ;
+    padding-bottom:70px ;
+    margin-right: 20px;
+}
+body{
+    height: 1000px;
+
+}
+
+span{
+    color: red;
+}
+
+.fileinput{
+    float:left
+}
+
+.container{
+    margin-right: 10%;    
+    border: 1px solid;
+    padding: 50px;
+    box-shadow: 10px 10px 30px  black;
+    margin-bottom: 200px;
+    
+}
+h5{
+    font-size:small;
+}
+input{
+    box-shadow: 0.3px 0.3px 1px black;
+}
+.p-dropdown{
+    box-shadow: 0.3px 0.3px 1px black;
+
+}

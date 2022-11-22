@@ -1,0 +1,25 @@
+<p-table [value]="productsData"  responsiveLayout="scroll">
+    <ng-template pTemplate="header">
+        <tr>
+            <th>Name</th>
+            <th>Category</th>
+            <th>Type</th>
+            <th>Length</th>
+            <th>Dia (mm)</th>
+            <th>Drive Size</th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-productData>
+
+        <tr>
+            <td><a [routerLink]="['/productinfo', productData.productName]" >{{productData.productName}}</a></td>
+            <td>{{productData.productCategory}}</td>
+            <td>{{productData.productType}}</td>
+            <td>{{productData.productLength}}</td>
+            <td>{{productData.productDia}}</td>
+            <td>{{productData.productDrive}}</td>
+        </tr>
+    </ng-template>
+</p-table>
+
+

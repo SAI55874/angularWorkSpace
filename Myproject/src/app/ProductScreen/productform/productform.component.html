@@ -1,0 +1,104 @@
+<!-- Header content (sidenav bar selector is in header component)-->
+
+<!-- <app-header></app-header> -->
+
+
+
+ <!-- ProductForm Page -->
+
+
+ <body style="padding-left:10%;">
+    <div class="container">
+     <div>
+       <h3>New Product Request</h3>
+
+       <form [formGroup]= "formValue">
+       <p-table [value]="producttable">
+           <ng-template pTemplate="body">
+               <div class="fileinput">
+
+                   <tr>
+                       <th>
+                           <div class="inputfile">
+                               <input class="file" type="file" id="file" formControlName="productImage"   pInputText>
+                           </div>
+                       </th>
+                   </tr>    
+                       
+               </div>
+               <div class="rightpane">
+                   <tr>
+                       <th>
+                           <h5>Product Name<span>*</span></h5>
+                           <input style="padding-left:40%;" formControlName="productName"   type="text" pInputText>
+                       </th>
+                   </tr>
+                   <tr>
+                       <th>
+                           <h5>Category<span>*</span></h5>
+                           <p-dropdown  [options]= "category" formControlName="productCategory" placeholder="Choose Category" 
+                               [showClear]="true">
+                           </p-dropdown>
+                       </th>
+                       <th>
+                           <h5>Type<span>*</span></h5>
+                           <p-dropdown  [options]= "type" formControlName="productType"  placeholder="Choose Product Type"
+                               [showClear]="true">
+                           </p-dropdown>
+                       </th>
+                   </tr> 
+                   <tr>
+                       <th>
+                           <h5>Length</h5>
+                           <input type="text" formControlName="productLength"  pInputText>
+                       </th>
+                       <th>
+                           <h5>Dia (mm)</h5>
+                           <input type="text" formControlName="productDia"   pInputText>
+                       </th>
+                   </tr>
+                   <tr>
+                       <th>
+                           <h5>Drive Size</h5>
+                           <input type="text" formControlName="productDrive"  pInputText>
+                       </th>
+                     
+                   </tr>
+
+                   <tr>
+                       <th>
+                           <h5>Quantity<span>*</span></h5>
+                           <input type="text" formControlName="productQuantity"  pInputText>
+                       </th>
+                       <th>
+                        <h5>Volume in<span>*</span></h5>
+                        <input type="text" formControlName="productVolume"  pInputText>
+                    </th>
+                      
+                   </tr>
+
+                   <tr>
+                       <th>
+                           <h5>Attach Pdf</h5>
+                           <input  type="file" formControlName="productFile"  pInputText>
+                           <!-- <i class="pi pi-paperclip"></i> -->
+                       </th>
+                   </tr>
+                   <tr>  
+                    <th>
+                        <h5>Description</h5>
+                        <textarea pInputTextarea formControlName="productDesc" ></textarea>
+                    </th>
+                    
+                   </tr>
+                   <button (click)="PostProduct()" style="background-color: black;float: right;margin-left: 80%;" pButton pRipple
+                         label="Add Product" class="p-button-raised">
+                   </button>
+                 
+               </div>
+           </ng-template>
+        </p-table>
+    </form>
+       </div>
+   </div>
+</body>

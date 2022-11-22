@@ -1,0 +1,53 @@
+
+
+
+
+<div class="ui-g fixed_header" >
+    <div class="ui-g-12"><div class="ui-g-6"></div>
+      <div class="ui-g-6">
+        <p><b>
+          <h4 style="font-weight: 900;font-variant: small-caps;">
+            <button pButton type="button" (click)= "visible = true" label="MENU" icon="pi pi-align-justify" class="p-button-sm"></button>
+            
+          </h4>
+        </b></p>
+      </div>
+    </div>
+  </div>
+  <p-sidebar [(visible)]= "visible"  >
+
+    <div class="container">
+      <div class="nav-bar">
+          <ul>
+              <li>Dashboard</li>
+              <li>Assembly Line 
+                <img src="assets/down.png" alt="" height="17"> 
+              </li>
+              <li>Trial Management 
+              </li>
+              <li><a style="text-decoration: none; color: aliceblue;" routerLink="/materialmanagment">Material Management </a>
+              </li>
+              <div class="Materialmanagement" id="Material">
+                  <ul>
+                      <!-- <li><a routerLink="#" >-Place Order</a></li>
+                      <li><a routerLink="#">-My Orders</a></li>
+                      <li><a routerLink="#">-Instant Order/Oil & Sealers</a> </li> -->
+                      <li><a routerLink="#">-Forecast</a></li>
+                      <li><a routerLink="/productform">-New Product Request</a></li> 
+                      <ul><li><a routerLink="/productlist" style="padding-left: 10%;">View Product</a></li>
+                      <li><a routerLink="/productform">Add New Product</a></li></ul>
+                      <li><a routerLink="#">-Material Safety Sheet</a></li>
+                  </ul>
+              </div>
+          </ul>
+      </div></div>
+   
+   <!-- <h3>Dash Board</h3>
+    <p-dropdown [options]="MMoption"  placeholder="Material Managment" ></p-dropdown>
+    <br><br><br><br><br><br><br><br><br><br> -->
+   
+  </p-sidebar>
+
+<div>
+  <router-outlet></router-outlet>
+</div>
